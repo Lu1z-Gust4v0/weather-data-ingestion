@@ -1,4 +1,4 @@
-DATA_SOURCE_BASE_URL = "https://api.open-meteo.com/v1/"
+DATA_SOURCE_BASE_URL = "https://api.open-meteo.com/v1/forecast"
 FORTALEZA_LATITUDE = -3.731862
 FORTALEZA_LONGITUDE = -38.526669
 DATA_SOURCE_CURRENT_OPTIONS = [

@@ -1,5 +1,6 @@
 from typing import TypedDict
 
+
 class CurrentUnits(TypedDict):
     time: str
     interval: str
@@ -12,7 +13,8 @@ class CurrentUnits(TypedDict):
     wind_speed_10m: str
     wind_direction_10m: str
     wind_gusts_10m: str
-    
+
+
 class CurrentData(TypedDict):
     time: str
     interval: int
@@ -25,7 +27,8 @@ class CurrentData(TypedDict):
     wind_speed_10m: float
     wind_direction_10m: int
     wind_gusts_10m: float
-    
+
+
 class WeatherApiResponse(TypedDict):
     latitude: float
     longitude: float
@@ -36,7 +39,8 @@ class WeatherApiResponse(TypedDict):
     elevation: float
     current_units: CurrentUnits
     current: CurrentData
-    
+
+
 class NormalizedWeatherData(TypedDict):
     latitude: float
     longitude: float

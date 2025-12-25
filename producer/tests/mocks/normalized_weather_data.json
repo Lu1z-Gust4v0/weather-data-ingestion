@@ -1,0 +1,15 @@
+{
+  "latitude": -3.75,
+  "longitude": -38.5,
+  "elevation": 21.0,
+  "temperature_2m": 27.2,
+  "relative_humidity_2m": 70,
+  "apparent_temperature": 29.9,
+  "is_day": false,
+  "precipitation": 0.0,
+  "weather_type": "overcast",
+  "wind_speed_10m": 12.6,
+  "wind_direction_10m": 85,
+  "wind_gusts_10m": 34.6,
+  "extracted_at": "2025-12-25T17:45:00-03:00"
+}

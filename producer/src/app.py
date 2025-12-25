@@ -10,7 +10,11 @@ from src.constants import (
     LOCAL_TIMEZONE,
 )
 from src.logger import logger
-from src.message_queue import send_data_to_message_queue, close_message_queue_connection
+from src.message_queue import (
+    connect_to_message_queue,
+    send_data_to_message_queue,
+    close_message_queue_connection,
+)
 
 
 def get_weather_data() -> WeatherApiResponse:
@@ -32,13 +36,15 @@ def get_weather_data() -> WeatherApiResponse:
 
 def main():
     try:
+        connection = connect_to_message_queue()
+
         data = get_weather_data()
 
         normalized_data = normalize_data(data)
 
-        send_data_to_message_queue(normalized_data)
+        send_data_to_message_queue(connection, normalized_data)
 
-        close_message_queue_connection()
+        close_message_queue_connection(connection)
 
     except RuntimeError as error:
         logger.error(str(error))

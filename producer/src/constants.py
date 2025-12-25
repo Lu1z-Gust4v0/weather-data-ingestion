@@ -1,3 +1,11 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv(dotenv_path="../.env")
+
+QUEUE_HOST = os.environ.get("RABBITMQ_HOST")
+QUEUE_NAME = os.environ.get("MESSAGE_QUEUE_NAME")
+
 DATA_SOURCE_BASE_URL = "https://api.open-meteo.com/v1/forecast"
 FORTALEZA_LATITUDE = -3.731862
 FORTALEZA_LONGITUDE = -38.526669

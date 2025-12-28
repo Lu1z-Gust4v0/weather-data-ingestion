@@ -1,28 +1,3 @@
-from dotenv import load_dotenv
-import os
-
-load_dotenv(dotenv_path="../.env")
-
-QUEUE_HOST = os.environ.get("RABBITMQ_HOST")
-QUEUE_NAME = os.environ.get("MESSAGE_QUEUE_NAME")
-
-DATA_SOURCE_BASE_URL = "https://api.open-meteo.com/v1/forecast"
-FORTALEZA_LATITUDE = -3.731862
-FORTALEZA_LONGITUDE = -38.526669
-DATA_SOURCE_CURRENT_OPTIONS = [
-    "temperature_2m",
-    "relative_humidity_2m",
-    "apparent_temperature",
-    "is_day",
-    "precipitation",
-    "weather_code",
-    "wind_speed_10m",
-    "wind_direction_10m",
-    "wind_gusts_10m",
-]
-
-LOCAL_TIMEZONE = "America/Sao_Paulo"
-
 WEATHER_CODE_MAP = {
     0: "clear_sky",
     1: "mainly_clear",

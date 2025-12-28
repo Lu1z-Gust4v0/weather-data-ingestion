@@ -1,7 +1,8 @@
-from typing import TypedDict
+from dataclasses import dataclass
 
 
-class CurrentUnits(TypedDict):
+@dataclass
+class CurrentUnits:
     time: str
     interval: str
     temperature_2m: str
@@ -15,7 +16,8 @@ class CurrentUnits(TypedDict):
     wind_gusts_10m: str
 
 
-class CurrentData(TypedDict):
+@dataclass
+class CurrentData:
     time: str
     interval: int
     temperature_2m: float
@@ -29,7 +31,8 @@ class CurrentData(TypedDict):
     wind_gusts_10m: float
 
 
-class WeatherApiResponse(TypedDict):
+@dataclass
+class WeatherApiResponse:
     latitude: float
     longitude: float
     generationtime_ms: float
@@ -41,7 +44,8 @@ class WeatherApiResponse(TypedDict):
     current: CurrentData
 
 
-class NormalizedWeatherData(TypedDict):
+@dataclass
+class NormalizedWeatherData:
     latitude: float
     longitude: float
     elevation: float

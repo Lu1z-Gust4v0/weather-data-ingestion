@@ -18,6 +18,27 @@ services:
     networks:
       - app_network
 
+  weather_producer:
+    build: ./producer
+    container_name: weather_producer
+    environment:
+      DATA_SOURCE_BASE_URL: ${DATA_SOURCE_BASE_URL}
+      RABBITMQ_HOST: ${RABBITMQ_HOST}
+      RABBITMQ_PORT: ${RABBITMQ_PORT}
+      RABBITMQ_QUEUE_NAME: ${RABBITMQ_QUEUE_NAME}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASS: ${RABBITMQ_PASS}
+      LATITUDE: ${LATITUDE}
+      LONGITUDE: ${LONGITUDE}
+      TIMEZONE: ${TIMEZONE}
+
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - app_network
+    restart: always
+
 networks:
   app_network:
     driver: bridge

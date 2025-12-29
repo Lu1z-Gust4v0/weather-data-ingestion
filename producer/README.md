@@ -50,7 +50,7 @@ docker compose up rabbitmq
 ```bash
 poetry run start
 # or
-python -m src.app
+python -m src.main
 ```
 
 The producer will fetch the latest weather data, normalize it, and publish a JSON message to the queue named by `MESSAGE_QUEUE_NAME`.

@@ -37,7 +37,7 @@ services:
         condition: service_healthy
     networks:
       - app_network
-    restart: always
+    # restart: always
 
 networks:
   app_network:

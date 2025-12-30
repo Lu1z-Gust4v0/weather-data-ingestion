@@ -28,7 +28,7 @@ COPY src/ ./src/
 # We export PATH so the job can find python, and redirect output to /proc/1/fd/1 
 # This trick sends cron logs to the Docker container's STDOUT
 # Change '0 * * * *' to '* * * * *' for once-per-minute execution
-RUN echo "* * * * * . /etc/environment; cd /app && /usr/local/bin/poetry run start >> /proc/1/fd/1 2>&1" \
+RUN echo "0 * * * * . /etc/environment; cd /app && /usr/local/bin/poetry run start >> /proc/1/fd/1 2>&1" \
     > /etc/cron.d/weather-cron && \
     chmod 0644 /etc/cron.d/weather-cron && \
     crontab /etc/cron.d/weather-cron
